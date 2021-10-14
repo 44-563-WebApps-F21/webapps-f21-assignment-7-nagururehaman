@@ -23,28 +23,29 @@
         <h4>
             <p id="countdown">Count </p>
         </h4>
-    
 
 
-    <button type="button" class="btn btn-primary" onclick="startTime()">
-        Start Timer</button>
 
-    <button type="button" class="btn btn-danger" onclick="recordReact()">
-        React Now</button>
+        <button type="button" class="btn btn-primary" onclick="startTime()">
+            Start Timer</button>
+
+        <button type="button" class="btn btn-danger" onclick="recordReact()">
+            React Now</button>
     </center>
 
     <script>
+        let r=3
         myTime = undefined;
         function recordReact() {
             myTime = Date.now();
             console.log(myTime);
         }
         function startTime() {
-            for (let i = 0; i <= 3; i++) {
-                j = (3 - i) * 1000;
+            for (let i = 0; i <= r; i++) {
+                //j = (3 - i) * 1000;
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = i;
-                }, j)
+                }, (r-i)*1000)
             }
             setTimeout(() => {
                 if (myTime == undefined) {
@@ -56,7 +57,8 @@
                     document.getElementById("target").innerHTML = "Time was " + differnce + " ms";
                     myTime = undefined
                 }
-            }, 3000)
+            }, r*1000)
+            r=Math.round(Math.random() * (10-2) + 0);
         }
     </script>
 

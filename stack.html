@@ -50,6 +50,7 @@
     <button onclick="makeNewDiv()">Push value</button>
     <button onclick="popItem()">Pop</button>
     <button onclick="zap()">Zap Values</button>
+    <button id="zap" onclick="uniqueHandler()" class="btn btn-warning">Unique</button><br>
 </center>
 
 
@@ -85,6 +86,25 @@
         }
         
     }
+    function uniqueHandler() {
+        let stack_values = document.getElementsByClassName("stack");
+        for (let i = 0; i < stack_values.length; i++) {
+            element1 = stack_values[i].innerHTML;
+            for (let j = i + 1; j < stack_values.length; j++) {
+                element2 = stack_values[j].innerHTML;
+                if (element1 == element2) {
+                    stack_values[j].remove();
+                    j--;
+                    i--;
+                    
+                }
+        
+            
+
+
+        }
+    }
+}
 </script>
 
 </html>

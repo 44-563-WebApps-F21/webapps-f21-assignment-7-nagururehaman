@@ -24,6 +24,8 @@
     <p id="distance">Distance is unknown</p>
 
 <div>
+
+    <div align="middle" ><button onclick="newgame()" class="btn btn-warning ">New Game</button></div><br>
     
     <div class="container row">
         <div class="col-2"><img class="rounded" src="plant.jpg" width="200" height="200" id="1" onclick="check(0)"></div>
@@ -95,6 +97,16 @@
                 }
             }
     }
+    function newgame() {
+            triesCount = 0;
+            animalLocation = Math.round(Math.random() * (23 - 0) + 0);
+            document.getElementById("tries").innerHTML = "Number of tries is zero";
+            distanceOfAnimal = "unknown"
+            document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+            for (var i = 0; i <= 23; i++) {
+                document.getElementById(ids[i]).src = "plant.jpg";
+            }
+        }
 </script>
 
     
