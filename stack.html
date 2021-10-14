@@ -87,13 +87,13 @@
         
     }
     function uniqueHandler() {
-        let stack_values = document.getElementsByClassName("stack");
-        for (let i = 0; i < stack_values.length; i++) {
-            element1 = stack_values[i].innerHTML;
-            for (let j = i + 1; j < stack_values.length; j++) {
-                element2 = stack_values[j].innerHTML;
-                if (element1 == element2) {
-                    stack_values[j].remove();
+        let val = document.getElementsByClassName("stack");
+        for (let i = 0; i < val.length; i++) {
+            val1 = val[i].innerHTML;
+            for (let j = i + 1; j < val.length; j++) {
+                val2 = val[j].innerHTML;
+                if (val1 == val2) {
+                    val[j].remove();
                     j--;
                     i--;
                     
