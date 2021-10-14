@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stack Itmes Page</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(81, 190, 218);
+        }
+
+        .flex-container>div {
+            /*div children of the flex container*/
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        /* Responsive layout */
+        @media (max-width: 600px) {
+            .flex-container {
+                flex-direction: column;
+                background-color: green;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/7327d38e85.js" crossorigin="anonymous"></script>
+</head>
+
+
+
+<body>
+    <center>
+        <h1>Rehaman builds a stack <i class="fas fa-layer-group"></i></h1><br>
+        <p>Enter your input here <i class="fas fa-hand-point-down"></i></p>
+        <input id="inputdata" type="text">
+    </center>
+    <br><br>
+    <div class="flex-container" id="target">
+        <div class="stack">row item 1</div>
+        <div class="stack">row item 2</div>
+        <div class="stack">row item 3</div>
+    </div>
+
+    <p> Press the button to create an new element of type div and then add it to the container.
+    </p>
+    <button onclick="makeNewDiv()">Push value</button>
+
+
+</body>
+<script>
+    function makeNewDiv() {
+        let element = document.createElement("div")
+        let input = document.getElementById("inputdata")
+        element.innerHTML = input.value
+        element.style.color = "stack"
+        document.getElementById('target').appendChild(element)
+
+    }
+</script>
+
+</html>
